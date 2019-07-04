@@ -22,7 +22,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
 
        vitals = doc.css(".main-wrapper")
- binding.pry
+
        returnHash = {}
        vitals.each do |vital|
          vital.css(".social-icon-container").children.each do |child|
