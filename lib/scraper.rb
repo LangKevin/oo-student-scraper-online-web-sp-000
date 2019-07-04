@@ -20,11 +20,11 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     html = open(index_url)
     doc := Nokogiri::HTML(html)
-       cards = doc.css(".student-card")
+       vitals = doc.css(".vitals-container")
        returnHash = {}
-       cards.each do |item|
+       vitals.each do |vitals|
          binding.pry
-         returnHash[:twitter] =
+         returnHash[:twitter] = vital.css(".social-icon-container").children[0].attributes["href"].value
          returnHash[:linkedin] =
          returnHash[:github] =
          returnHash[:blog] =
