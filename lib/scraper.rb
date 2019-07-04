@@ -6,11 +6,11 @@ class Scraper
   def self.scrape_index_page(index_url)
     html = open(index_url)
     doc = Nokogiri::HTML(html)
-    cards = doc.css(".student-card").css(".card-text-container")
+    cards = doc.css(".student-card")
     returnArr = []
     cards.each do |team|
-      name = team.css(".student-name").text
-      location = team.css(".student-location")
+      name = team.css(".card-text-container").css(".student-name").text
+      location = team.css(".card-text-container").css(".student-location")
       profile_url = team.children[0].href
       returnArr << {:name => name, :location => location, :profile_url => profile_url}
     end
