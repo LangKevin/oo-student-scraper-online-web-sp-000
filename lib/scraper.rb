@@ -18,7 +18,8 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    doc := Nokogiri::HTML(url)
+    html = open(index_url)
+    doc := Nokogiri::HTML(html)
        cards = doc.css(".student-card")
        returnHash = {}
        cards.each do |item|
