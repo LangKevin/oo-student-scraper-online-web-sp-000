@@ -11,7 +11,7 @@ class Scraper
     cards.each do |team|
       binding.pry
       name = team.css(".card-text-container").css(".student-name").text
-      location = team.css(".card-text-container").css(".student-location")
+      location = team.css(".card-text-container").css(".student-location").text
       profile_url = team.children[1].attributes["href"].value
       returnArr << {:name => name, :location => location, :profile_url => profile_url}
     end
