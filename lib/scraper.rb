@@ -27,6 +27,7 @@ class Scraper
        vitals.each do |vital|
          vital.css(".social-icon-container").children.each do |child|
           #  case child.attributes["href"].value
+          binding.pry
            if child.attributes["href"].value != nil
              if child.attributes["href"].value.include?("twitter")
                returnHash[:twitter] = child.attributes["href"].value
