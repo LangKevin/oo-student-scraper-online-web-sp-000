@@ -21,7 +21,7 @@ class Scraper
     html = open(profile_url)
     doc = Nokogiri::HTML(html)
 
-       vitals = doc.css(".vitals-container")
+       vitals = doc.css(".main-wrapper profile")
 # binding.pry
        returnHash = {}
        vitals.each do |vital|
