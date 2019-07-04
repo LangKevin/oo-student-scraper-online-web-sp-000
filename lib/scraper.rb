@@ -20,7 +20,9 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     html = open(index_url)
     doc = Nokogiri::HTML(html)
+
        vitals = doc.css(".vitals-container")
+binding.pry
        returnHash = {}
        vitals.each do |vitals|
          binding.pry
