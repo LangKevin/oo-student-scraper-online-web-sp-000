@@ -7,8 +7,9 @@ class Scraper
     doc = Nokogiri::HTML(index_url)
     cards = doc.css(".student-card")
     returnArr = []
+binding.pry
     cards.each do |team|
-      binding.pry
+      
       returnArr << {:name => item}
     end
   end
