@@ -11,6 +11,7 @@ class Scraper
     cards.each do |team|
       returnArr << {:name => team.css(".student-name").text, :location => team.css(".student-location").text}
     end
+    binding.pry
     returnArr
   end
 
