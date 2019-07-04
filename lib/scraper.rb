@@ -9,12 +9,13 @@ class Scraper
     cards = doc.css(".student-card")
     returnArr = []
     cards.each do |team|
+      binding.pry
       name = team.css(".card-text-container").css(".student-name").text
       location = team.css(".card-text-container").css(".student-location")
       profile_url = team.children[0].href
       returnArr << {:name => name, :location => location, :profile_url => profile_url}
     end
-    binding.pry
+    
     returnArr
   end
 
