@@ -11,6 +11,7 @@ class Scraper
     cards.each do |team|
       returnArr << {:name => team.css(".student-name").text, :location => team.css(".student-location").text}
     end
+    returnArr
   end
 
   def self.scrape_profile_page(profile_url)
