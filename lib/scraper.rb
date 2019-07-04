@@ -42,8 +42,8 @@ class Scraper
            end
          end
          binding.pry
-         returnHash[:profile_quote] = vital.css(".vitals-text-container").css(".profile-quote").text
-         returnHash[:bio] = vital.css(".details-container").css(".description-holder").text
+         returnHash[:profile_quote] = vital.css(".vitals-text-container").css(".profile-quote")..children[1].text
+         returnHash[:bio] = vital.css(".details-container").css(".description-holder").children[1].text
        end
 
        returnHash
