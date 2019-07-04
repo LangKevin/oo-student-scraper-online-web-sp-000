@@ -15,7 +15,7 @@ class Scraper
       profile_url = team.children[1].attributes["href"].value
       returnArr << {:name => name, :location => location, :profile_url => profile_url}
     end
-    
+
     returnArr
   end
 
