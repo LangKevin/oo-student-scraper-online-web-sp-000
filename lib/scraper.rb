@@ -28,7 +28,7 @@ class Scraper
          returnHash[:linkedin] = vital.css(".social-icon-container").children[1].attributes["href"].value
          returnHash[:github] = vital.css(".social-icon-container").children[2].attributes["href"].value
          returnHash[:blog] = vital.css(".social-icon-container").children[3].attributes["href"].value
-         returnHash[:profile_quote] =
+         returnHash[:profile_quote] = vital.css(".social-icon-container").css(".profile-quote")
          returnHash[:bio] =
        end
        returnHash
