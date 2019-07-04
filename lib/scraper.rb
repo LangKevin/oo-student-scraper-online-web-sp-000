@@ -30,10 +30,11 @@ class Scraper
            if child.attributes["href"].value != nil
              if child.attributes["href"].value.include?("twitter")
                returnHash[:twitter] = child.attributes["href"].value
-             elsif child.attributes["href"].value.include?("linkedin")  
-               returnHash[:linkedin] =
+             elsif child.attributes["href"].value.include?("linkedin")
+               returnHash[:linkedin] = child.attributes["href"].value
               #  returnHash[:linkedin] = vital.css(".social-icon-container").children[1].attributes["href"].value
-               returnHash[:github] = vital.css(".social-icon-container").children[2].attributes["href"].value
+            elsif child.attributes["href"].value.include?("github")
+                 returnHash[:github] = child.attributes["href"].value
                returnHash[:blog] = vital.css(".social-icon-container").children[3].attributes["href"].value
              end
            end
