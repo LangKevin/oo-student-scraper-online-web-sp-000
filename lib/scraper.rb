@@ -10,7 +10,7 @@ class Scraper
     returnArr = []
 binding.pry
     cards.each do |team|
-      
+
       returnArr << {:name => item}
     end
   end
