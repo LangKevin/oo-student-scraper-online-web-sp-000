@@ -22,7 +22,7 @@ class Scraper
     doc = Nokogiri::HTML(html)
 
        vitals = doc.css(".vitals-container")
-binding.pry
+# binding.pry
        returnHash = {}
        vitals.each do |vital|
          binding.pry
