@@ -9,8 +9,6 @@ class Scraper
     cards = doc.css(".student-card").css(".card-text-container")
     returnArr = []
     cards.each do |team|
-      # binding.pry
-
       returnArr << {:name => team.css(".student-name").text, :location => team.css(".student-location").text}
     end
   end
