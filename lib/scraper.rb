@@ -14,19 +14,19 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-    doc := Nokogiri::HTML(url)
-       cards = doc.css(".student-card")
-       returnHash = {}
-       cards.each do |item|
-         binding.pry
-         returnHash[:twitter] =
-         returnHash[:linkedin] =
-         returnHash[:github] =
-         returnHash[:blog] =
-         returnHash[:profile_quote] =
-         returnHash[:bio] =
-       end
-       returnHash    
+    # doc := Nokogiri::HTML(url)
+    #    cards = doc.css(".student-card")
+    #    returnHash = {}
+    #    cards.each do |item|
+    #      binding.pry
+    #      returnHash[:twitter] =
+    #      returnHash[:linkedin] =
+    #      returnHash[:github] =
+    #      returnHash[:blog] =
+    #      returnHash[:profile_quote] =
+    #      returnHash[:bio] =
+    #    end
+    #    returnHash    
   end
 
 end
