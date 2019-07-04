@@ -24,7 +24,7 @@ class Scraper
        vitals = doc.css(".vitals-container")
 binding.pry
        returnHash = {}
-       vitals.each do |vitals|
+       vitals.each do |vital|
          binding.pry
          returnHash[:twitter] = vital.css(".social-icon-container").children[0].attributes["href"].value
          returnHash[:linkedin] = vital.css(".social-icon-container").children[1].attributes["href"].value
