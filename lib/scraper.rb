@@ -25,13 +25,21 @@ class Scraper
 # binding.pry
        returnHash = {}
        vitals.each do |vital|
-         binding.pry
-         returnHash[:twitter] = vital.css(".social-icon-container").children[0].attributes["href"].value
-         returnHash[:linkedin] = vital.css(".social-icon-container").children[1].attributes["href"].value
-         returnHash[:github] = vital.css(".social-icon-container").children[2].attributes["href"].value
-         returnHash[:blog] = vital.css(".social-icon-container").children[3].attributes["href"].value
-         returnHash[:profile_quote] = vital.css(".social-icon-container").css(".profile-quote")
-         returnHash[:bio] = vital.css("description-holder")
+         vital.css(".social-icon-container").children.each do |child|
+          #  case child.attributes["href"].value
+           if child.attributes["href"].value != nil
+             if child.attributes["href"].value.include?("twitter")
+               returnHash[:twitter] = child.attributes["href"].value
+             elsif child.attributes["href"].value.include?("linkedin")  
+               returnHash[:linkedin] =
+              #  returnHash[:linkedin] = vital.css(".social-icon-container").children[1].attributes["href"].value
+               returnHash[:github] = vital.css(".social-icon-container").children[2].attributes["href"].value
+               returnHash[:blog] = vital.css(".social-icon-container").children[3].attributes["href"].value
+             end
+           end
+         end
+         returnHash[:profile_quote] = vital.css(".social-icon-container").css(".profile-quote").text
+         returnHash[:bio] = vital.css("description-holder").text
        end
        returnHash
   end
