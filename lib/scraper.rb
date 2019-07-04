@@ -41,10 +41,11 @@ class Scraper
              end
            end
          end
+         binding.pry
          returnHash[:profile_quote] = vital.css(".social-icon-container").css(".profile-quote").text
          returnHash[:bio] = vital.css("description-holder").text
        end
-       binding.pry
+       
        returnHash
   end
 
